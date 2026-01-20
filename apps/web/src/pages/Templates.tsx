@@ -810,7 +810,7 @@ export function Templates() {
       {/* Header */}
       <Card>
         <CardHeader className="flex-row items-center justify-between">
-          <CardTitle as="h1">Template Library</CardTitle>
+          <CardTitle>Template Library</CardTitle>
           <Button variant="primary" onClick={() => setIsCreateOpen(true)}>
             <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
