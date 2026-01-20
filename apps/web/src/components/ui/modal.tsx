@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
+import { X } from "lucide-react";
 
 export interface ModalProps {
   open: boolean;
@@ -44,7 +45,7 @@ function Modal({ open, onClose, children, className }: ModalProps) {
       aria-modal="true"
     >
       <div
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+        className="fixed inset-0 bg-background/80 backdrop-blur-sm transition-all duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -53,7 +54,7 @@ function Modal({ open, onClose, children, className }: ModalProps) {
         tabIndex={-1}
         className={cn(
           "relative z-50 w-full max-w-lg mx-4",
-          "bg-zinc-800 border border-zinc-700 rounded-xl shadow-2xl",
+          "bg-card border border-border rounded-xl shadow-2xl",
           "animate-in fade-in-0 zoom-in-95 duration-200",
           "focus:outline-none",
           className
@@ -76,7 +77,7 @@ const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
       <div
         ref={ref}
         className={cn(
-          "px-6 py-4 border-b border-zinc-700 flex items-center justify-between",
+          "px-6 py-4 border-b border-border flex items-center justify-between",
           className
         )}
         {...props}
@@ -95,7 +96,7 @@ const ModalTitle = React.forwardRef<HTMLHeadingElement, ModalTitleProps>(
     return (
       <h2
         ref={ref}
-        className={cn("text-lg font-semibold text-zinc-100", className)}
+        className={cn("text-lg font-semibold text-foreground", className)}
         {...props}
       />
     );
@@ -114,26 +115,14 @@ const ModalClose = React.forwardRef<HTMLButtonElement, ModalCloseProps>(
         ref={ref}
         type="button"
         className={cn(
-          "p-1.5 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-zinc-700",
-          "transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500",
+          "p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent",
+          "transition-colors focus:outline-none focus:ring-2 focus:ring-ring",
           className
         )}
         aria-label="Close"
         {...props}
       >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
+        <X className="w-5 h-5" />
       </button>
     );
   }
@@ -163,7 +152,7 @@ const ModalFooter = React.forwardRef<HTMLDivElement, ModalFooterProps>(
       <div
         ref={ref}
         className={cn(
-          "px-6 py-4 border-t border-zinc-700 flex items-center justify-end gap-3",
+          "px-6 py-4 border-t border-border flex items-center justify-end gap-3",
           className
         )}
         {...props}

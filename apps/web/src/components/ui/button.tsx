@@ -1,68 +1,59 @@
 import * as React from "react";
 import { cn } from "../../lib/utils";
 import { Spinner } from "./spinner";
+import { cva, type VariantProps } from "class-variance-authority";
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        primary: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] transition-all duration-300",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+        danger: "bg-red-600 text-white hover:bg-red-500 shadow-lg shadow-red-500/20",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+      size: "default",
+    },
+  }
+);
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost" | "danger";
-  size?: "sm" | "md" | "lg";
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   loading?: boolean;
 }
 
-const variantClasses = {
-  primary:
-    "bg-blue-600 text-white hover:bg-blue-500 focus:ring-blue-500/50 active:bg-blue-700",
-  secondary:
-    "bg-zinc-700 text-zinc-100 hover:bg-zinc-600 focus:ring-zinc-500/50 active:bg-zinc-800",
-  ghost:
-    "bg-transparent text-zinc-300 hover:bg-zinc-800 hover:text-zinc-100 focus:ring-zinc-500/50",
-  danger:
-    "bg-red-600 text-white hover:bg-red-500 focus:ring-red-500/50 active:bg-red-700",
-} as const;
-
-const sizeClasses = {
-  sm: "h-8 px-3 text-sm gap-1.5",
-  md: "h-10 px-4 text-sm gap-2",
-  lg: "h-12 px-6 text-base gap-2.5",
-} as const;
-
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      variant = "secondary",
-      size = "md",
-      loading = false,
-      disabled,
-      children,
-      ...props
-    },
-    ref
-  ) => {
-    const isDisabled = disabled || loading;
-
+  ({ className, variant, size, loading = false, children, disabled, ...props }, ref) => {
     return (
       <button
+        className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        className={cn(
-          "inline-flex items-center justify-center rounded-lg font-medium transition-colors",
-          "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900",
-          "disabled:opacity-50 disabled:cursor-not-allowed",
-          variantClasses[variant],
-          sizeClasses[size],
-          className
-        )}
-        disabled={isDisabled}
-        aria-busy={loading}
+        disabled={loading || disabled}
         {...props}
       >
-        {loading && <Spinner size={size === "lg" ? "md" : "sm"} />}
+        {loading && <Spinner className="mr-2 h-4 w-4 animate-spin" />}
         {children}
       </button>
     );
   }
 );
-
 Button.displayName = "Button";
 
-export { Button };
+export { Button, buttonVariants };
