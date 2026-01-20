@@ -34,7 +34,7 @@ const generationConfig = {
   maxOutputTokens: 2048,
 };
 
-export function getGeminiModel(modelName: 'gemini-1.5-flash' | 'gemini-pro' = 'gemini-1.5-flash') {
+export function getGeminiModel(modelName: 'gemini-2.5-flash' | 'gemini-pro' = 'gemini-2.5-flash') {
   if (!genAI) {
     throw new Error('Gemini API key is not configured');
   }

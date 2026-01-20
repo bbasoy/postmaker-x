@@ -111,7 +111,7 @@ router.post('/', async (req, res, next) => {
       req.body
     );
 
-    const model = getGeminiModel('gemini-1.5-flash');
+    const model = getGeminiModel('gemini-2.5-flash');
     const prompt = buildPrompt(topic, style, targetEngagement, constraints);
     const result = await model.generateContent(prompt);
     const generatedText = result.response.text().trim();

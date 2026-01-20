@@ -52,7 +52,7 @@ export async function generatePost(
   const { topic, style, targetEngagement, constraints } = options;
   const prompt = getPostGenerationPrompt(topic, style, targetEngagement, constraints);
 
-  const model = getGeminiModel('gemini-1.5-flash');
+  const model = getGeminiModel('gemini-2.5-flash');
   const result = await model.generateContent(prompt);
   const response = result.response;
   const content = response.text().trim();
@@ -89,7 +89,7 @@ export async function optimizePost(
 
   const prompt = getPostOptimizationPrompt(content, targetEngagement);
 
-  const model = getGeminiModel('gemini-1.5-flash');
+  const model = getGeminiModel('gemini-2.5-flash');
   const result = await model.generateContent(prompt);
   const response = result.response;
   const optimized = response.text().trim();
@@ -158,7 +158,7 @@ export async function createThread(
 
   const prompt = getThreadCreationPrompt(content, maxParts);
 
-  const model = getGeminiModel('gemini-1.5-flash');
+  const model = getGeminiModel('gemini-2.5-flash');
   const result = await model.generateContent(prompt);
   const response = result.response;
   const text = response.text().trim();
@@ -202,7 +202,7 @@ export async function suggestImprovements(
 
   const prompt = getSuggestionPrompt(content);
 
-  const model = getGeminiModel('gemini-1.5-flash');
+  const model = getGeminiModel('gemini-2.5-flash');
   const result = await model.generateContent(prompt);
   const response = result.response;
   const text = response.text().trim();
